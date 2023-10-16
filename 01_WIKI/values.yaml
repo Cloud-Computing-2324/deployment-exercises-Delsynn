@@ -1,0 +1,19 @@
+# Ingress Configuration
+ingress:
+  enabled: true
+  className: ""
+  hosts:
+    - host: wiki.47.cc.ucll.cloud
+      paths:
+        - path: "/"
+          pathType: Prefix
+
+
+# Resource Configuration
+resources:
+  limits:
+    cpu: 500m
+    memory: 256Mi
+  requests:
+    cpu: 500m
+    memory: 256Mi
