@@ -1,0 +1,8 @@
+#Ingress Configuration
+ingress:
+  enabled: true
+  hosts:
+    - host: up.47.cc.ucll.cloud
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
