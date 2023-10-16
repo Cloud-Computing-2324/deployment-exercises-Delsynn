@@ -1,0 +1,5 @@
+ingress:
+  enabled: true
+  pathType: ImplementationSpecific
+  hostname: support.47.cc.ucll.cloud
+  path: /
