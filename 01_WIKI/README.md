@@ -1,3 +1,8 @@
 #Wiki.js
 
 Opdracht 1 op Toledo. Als je gebruik maakt van Helm, zet je values-file in deze map, en je commando hieronder. Maak je gebruik van klassieke deployments, zet dan je bestanden in deze map.
+
+Commando's :
+
+helm repo add requarks https://charts.js.wiki
+helm install mywiki requarks/wiki --values .\values.yaml --namespace wiki --create-namespace
