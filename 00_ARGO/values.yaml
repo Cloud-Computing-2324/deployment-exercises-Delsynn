@@ -1,0 +1,15 @@
+server:
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: cluster-issuer
+    hosts:
+      - "argocd.47.cc.ucll.cloud"
+    tls:
+      - secretName: argocd-tls
+        hosts:
+          - "argocd.47.cc.ucll.cloud"
+          
+configs:
+  params:
+    server.insecure: true

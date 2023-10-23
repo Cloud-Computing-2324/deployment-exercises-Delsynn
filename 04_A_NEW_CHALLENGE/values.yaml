@@ -1,0 +1,27 @@
+# Install cert-manager
+cert-manager:
+  install: true
+
+# Configure ClusterIssuer for Let's Encrypt
+cert-manager:
+  clusterIssuer:
+    enabled: true
+    name: letsencrypt-staging
+    acmeServer: https://acme-staging-v02.api.letsencrypt.org/directory
+    email: your-email@example.com
+
+# Ingress resource for your website
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx  # Use the appropriate Ingress class
+    cert-manager.io/cluster-issuer: letsencrypt-staging  # Use the issuer name defined above
+  hosts:
+    - host: wiki.47.cc.ucll.cloud
+  paths:
+    - path: /
+      pathType: Prefix
+  tls:
+    - hosts:
+        - wiki.47.cc.ucll.cloud
+      secretName: michiel  # You can create a Kubernetes secret to store the TLS certificate and key
