@@ -6,7 +6,7 @@ metadata:
 spec:
   sources:
   - repoURL: https://charts.js.wiki
-    chart: requarks
+    chart: wiki
     targetRevision: 2.2.20
     helm:
       valueFiles:
