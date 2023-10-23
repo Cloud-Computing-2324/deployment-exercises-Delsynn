@@ -3,7 +3,7 @@ ingress:
   annotations:
     cert-manager.io/cluster-issuer: cluster-issuer
   hosts:
-    - host: uptime.47.cc.ucll.cloud
+    - host: uptimekuma.47.cc.ucll.cloud
       paths:
         - path: /
           pathType: Prefix
