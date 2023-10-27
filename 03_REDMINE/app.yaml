@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: redmine
+  namespace: argo
+spec:
+  sources:
+  - repoURL: https://marketplace.azurecr.io/helm/v1/repo
+    chart: redmine
+    targetRevision: x
+    helm:
+      valueFiles:
+        - $values/03_REDMINE/values.yaml
+  - repoURL: 'https://github.com/Cloud-Computing-2324/deployment-exercises-Delsynn.git'
+    targetRevision: main
+    ref: values
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: redmine
+  project: default
+  info:
+    - name: 'Redmine'
+      value: 'https://support.47.cc.ucll.cloud'
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
